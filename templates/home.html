@@ -1,0 +1,202 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="row">
+    <div class="col-sm-8 dashboard-bg-color pt-3 pb-3">
+        <div class="ms-2 me-2 mb-2 position-relative">
+            <button type="button" class="btn btn-sm btn-primary rounded-pill me-1">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-primary rounded-pill me-1">Home</button>
+            <button type="button" class="btn btn-sm btn-primary rounded-pill me-1">My Family</button>
+            <button type="button" class="btn btn-sm btn-primary rounded-pill me-1">Settings</button>
+
+        </div>
+        <div class="row p-2">
+            <div class="col-sm-7">
+                <div class="card border-0 rounded-4 pt-2 pb-2 mb-3">
+                    <div class="card-body">
+                        <div class="mb-5 w-100 d-flex justify-content-center position-relative">
+                            <h5 class="card-title position-absolute top-0 start-0 text-secondary">Air Conditioner</h5>
+                            <div class="form-check form-switch position-absolute top-0 end-0">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+                                <span>ON</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4 w-100 d-flex justify-content-center">
+                            <button type="button" class="btn btn-primary rounded-pill" id="thermostat-temp">
+                                Cooling Mode
+                            </button>
+                        </div>
+                        <div class="mb-3 w-100 d-flex justify-content-center">
+                            <div id="slider"></div>
+                        </div>
+                        <div class="mb-0 w-100 d-flex justify-content-center slider-btn">
+                            <button type="button" class="btn btn-outline-primary btn-circle btn-lg me-2" id="sliderDown">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-warning btn-circle btn-lg ms-2" id="sliderUp">
+                                <i class="bi bi-chevron-up"></i>
+                            </button>
+                        </div>
+                        <div class="mb-3 w-100 justify-content-center d-flex" style="margin-top: -10px;">
+                            <button type="button" class="btn btn-outline-primary btn-lg me-3">
+                                <i class="bi bi-fan"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary btn-lg me-3">
+                                <i class="bi bi-clock"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary btn-lg me-3">
+                                <i class="bi bi-brightness-high"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary btn-lg me-0">
+                                <i class="bi bi-moon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 rounded-4 pt-2 pb-2 mb-3">
+                    <div class="card-body">
+                        <div class="mb-5 w-100 d-flex justify-content-center position-relative">
+                            <h5 class="card-title position-absolute top-0 start-0 text-secondary">Fan</h5>
+                            <div class="form-check form-switch position-absolute top-0 end-0">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+                                <span>ON</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-0 w-100 justify-content-center d-flex" style="margin-top: -0px;">
+                            <button type="button" class="btn btn-outline-primary btn-lg me-3">
+                                <i class="bi bi-arrow-clockwise"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary btn-lg me-3">
+                                15
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary btn-lg me-3">
+                                30
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary btn-lg me-0">
+                                45
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="card border-0 rounded-4 mb-3">
+                    <div class="card-body">
+                        <div class="mb-3 w-100 d-flex justify-content-center">
+                            <h4 class="mb-2">May 27, 2023</h4>
+                        </div>
+                        <div class="mb-0 w-100 d-flex justify-content-center">
+                            <p class="display-5">10:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 rounded-4 mb-3">
+                    <img src="{{ url_for('static', filename='img/weather-bg.jpg') }}" class="card-img rounded-4" alt="..." />
+                    <div class="card-img-overlay text-dark">
+                        <h4 class="mb-0">Morrow, GA</h4>
+                        <p class="display-4">60°F</p>
+                        <p class="mb-2">Feels Like: <strong>55 °C</strong></p>
+                        <h5>Clouds</h5>
+                    </div>
+                </div>
+
+                <div class="card border-0 rounded-4 mb-3">
+                    <div class="card-body">
+                        <div class="w-100 d-flex justify-content-center">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="d-flex justify-content-around text-center">
+                                        <div class="flex-column">
+                                            <p class="small"><strong>21°C</strong></p>
+                                            <i class="fas fa-sun fa-2x mb-3" style="color: #ddd;"></i>
+                                            <p class="mb-0"><strong>12:00</strong></p>
+                                            <p class="mb-0 text-muted" style="font-size: 0.65rem;">PM</p>
+                                        </div>
+                                        <div class="flex-column">
+                                            <p class="small"><strong>2°C</strong></p>
+                                            <i class="fas fa-sun fa-2x mb-3" style="color: #ddd;"></i>
+                                            <p class="mb-0"><strong>1:00</strong></p>
+                                            <p class="mb-0 text-muted" style="font-size: 0.65rem;">PM</p>
+                                        </div>
+                                        <div class="flex-column">
+                                            <p class="small"><strong>20°C</strong></p>
+                                            <i class="fas fa-cloud fa-2x mb-3" style="color: #ddd;"></i>
+                                            <p class="mb-0"><strong>2:00</strong></p>
+                                            <p class="mb-0 text-muted" style="font-size: 0.65rem;">PM</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 rounded-4 mb-3">
+                    <div class="card-body">
+                        <div class="mb-4 w-100 d-flex justify-content-center position-relative">
+                            <h5 class="card-title position-absolute top-0 start-0 text-secondary">Electricity</h5>
+                        </div>
+
+                        <div class="w-100 d-flex justify-content-center">
+                            <canvas id="electricityChart" width="100%"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm sidebar-bg-color pt-3 pb-3">
+        <div class="ms-2 me-2 mb-2 position-relative">
+            <button type="button" class="btn btn-sm btn-primary rounded-pill me-1">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-primary rounded-pill me-1">Camera Settings</button>
+
+        </div>
+        <div class="row p-2">
+            <div class="col-sm">
+                <div class="card border-0 rounded-4 mb-3">
+                    <div class="card-body">
+                        <div class="mb-4 w-100 d-flex justify-content-center position-relative">
+                            <h5 class="card-title position-absolute top-0 start-0 text-secondary">Front Door</h5>
+                        </div>
+
+                        <div class="w-100 d-flex justify-content-center">
+                            <img src="{{ url_for('static', filename='img/camera1.png') }}" class="card-img rounded" alt="..." />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 rounded-4 mb-3">
+                    <div class="card-body">
+                        <div class="mb-4 w-100 d-flex justify-content-center position-relative">
+                            <h5 class="card-title position-absolute top-0 start-0 text-secondary">Indoor</h5>
+                        </div>
+
+                        <div class="w-100 d-flex justify-content-center">
+                            <img src="{{ url_for('static', filename='img/camera2.jpg') }}" class="card-img rounded" alt="..." />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 rounded-4 mb-3">
+                    <div class="card-body">
+                        <div class="mb-4 w-100 d-flex justify-content-center position-relative">
+                            <h5 class="card-title position-absolute top-0 start-0 text-secondary">Water</h5>
+                        </div>
+
+                        <div class="w-100 d-flex justify-content-center">
+                            <canvas id="waterChart" width="100%"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

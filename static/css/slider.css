@@ -1,0 +1,16 @@
+.rs-control .rs-range-color {
+    background-color: #ffffff;
+}
+.rs-control .rs-path-color {
+    background-color: #ffffff;
+}
+.rs-control .rs-handle {
+    background-color: #F7D060;
+}
+.rs-control .rs-bg-color {
+    background-color: #ffffff;
+}
+#slider .rs-tooltip-text  {
+    font-family: 'Roboto';
+    font-size: 4em;
+}
